@@ -1,0 +1,27 @@
+development:
+        solr:
+                version: '5.4.1'
+                # this will be interpreted relative to Rails.root 
+                # unless it starts with a / 
+                install_dir: 'solr-install'
+        traject:
+        # the arguments in cmdline_base will be
+        # prepended to the traject command line (before
+        # the configuration files).  See the output of
+        # `bundle exec traject --help` for a complete list of options
+                cmdline_base: []
+         
+        # these are the configuration files to be used, in order (rake task
+        # will add '-c' switch in front of each
+        # note paths not starting with / will be interpreted relative
+        # to this file (Rails.root/config/traject)
+                config_files: [ "ncsu_sample.rb" ]
+
+production:
+        solr:
+                version: '5.4.1'
+                install_dir: /opt/solr/solr-5.4.1
+        traject:
+                cmdline_base : []
+                config_files: [ "traject-production.rb" ]
+                

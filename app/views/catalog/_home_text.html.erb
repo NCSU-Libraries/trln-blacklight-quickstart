@@ -1,0 +1,47 @@
+<div class="page-header row">
+  <h2 class="col-md-8 page-heading"><%= t('blacklight.welcome') %></h2>
+  
+  <ul class="nav nav-pills col-md-4">
+    <li><a href="https://github.com/projectblacklight/blacklight/">Github</a></li>
+    <li><a href="https://github.com/projectblacklight/blacklight/wiki">Wiki</a></li>
+    <li><a href="https://github.com/projectblacklight/blacklight/releases/tag/v<%= Blacklight::VERSION %>">Release Notes</a></li>
+  </ul>
+
+</div>
+
+<div id="getting-started">
+  <h3 class='section-heading'>TRLN Blacklight Quickstart</h3>
+	<p>If you got this far, congratulations!  If you are now wondering
+	why there's no facets on the left hand side, probably you need to 
+	index some data.  See the README.md file in the root of the project
+	for some information, but here's what you need to do in a nutshell: 
+	</p>
+
+  
+  <ol>
+    <li>Get some MARC files and put them somehwere on a filesystem you can reach from the machine this is running on.  MARC21, MARCXML, it shouldn't matter.  Don't go overboard, a few thousand records should be more than enough.</li>
+   <li>Create your own sample traject configuration in <code>config/traject</code> and point to it in <code>config/trln.yml</code>.  We'll fix this later.
+   </li>
+    <li>execute <code>bundle exec rake trln:solr:index [ space-separated marc files ]</code>.  Check the output for anything that looks like something failed.</li>
+	
+     </li>
+     <li>See <a href="https://github.com/traject/traject">Traject</a> for more information on using traject to transform MARC records into Solr documents.
+    </li>
+  </ol>
+</div>
+
+<script>
+  $(function() {
+    $('#about a').on('click', function(e) {
+      e.preventDefault();
+
+      if ($('#about-content').html() == "") {
+        $('#about-content').load($(this).attr("href"), function() {
+          $('#about-content').show();
+        });
+      } else {
+        $('#about-content').toggle();
+      }
+    });
+  });
+</script>
