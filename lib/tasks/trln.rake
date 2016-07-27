@@ -38,7 +38,7 @@ desc "Custom tasks for TRLN"
 namespace :trln do
 	namespace :solr do
 		install_dir = ENV['SOLR_INSTALL_DIR'] || File.absolute_path(config[:solr][:install_dir], Rails.root)
-		solr_version = config[:solr][:version] || '5.4.1'
+		solr_version = config[:solr][:version] || '5.5.2'
 		solr_cmd = File.join(install_dir,"solr-#{solr_version}/bin/solr")
 		solr_port = config[:solr][:port] || 8983
 

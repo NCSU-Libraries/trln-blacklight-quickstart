@@ -1,6 +1,6 @@
 development:
         solr:
-                version: '5.4.1'
+                version: '5.5.2'
                 # this will be interpreted relative to Rails.root 
                 # unless it starts with a / 
                 install_dir: 'solr-install'
@@ -19,8 +19,8 @@ development:
 
 production:
         solr:
-                version: '5.4.1'
-                install_dir: /opt/solr/solr-5.4.1
+                version: '5.5.2'
+                install_dir: /opt/solr/solr-5.5.2
         traject:
                 cmdline_base : []
                 config_files: [ "traject-production.rb" ]
