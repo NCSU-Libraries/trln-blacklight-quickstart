@@ -179,7 +179,7 @@ class Fetcher
 
 	MIRROR_BASE = "https://www.apache.org/dyn/closer.lua/lucene/solr/%{version}"
 
-	SHA_BASE = "http://archive.apache.org/dist/lucene/solr/%{version}/solr-%{version}.tgz.sha1"
+	SHA_BASE = "https://archive.apache.org/dist/lucene/solr/%{version}/solr-%{version}.tgz.sha1"
 
 	@download_dir
 
