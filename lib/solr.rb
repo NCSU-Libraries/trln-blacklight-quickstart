@@ -179,11 +179,11 @@ class Fetcher
 
 	MIRROR_BASE = "https://www.apache.org/dyn/closer.lua/lucene/solr/%{version}"
 
-	SHA_BASE = "http://www.us.apache.org/dist/lucene/solr/%{version}/solr-%{version}.tgz.sha1"
+	SHA_BASE = "https://archive.apache.org/dist/lucene/solr/%{version}/solr-%{version}.tgz.sha1"
 
 	@download_dir
 
-	@version = '5.4.1'
+	@version = '5.5.2'
 
 	@sha_uri
 
@@ -195,7 +195,7 @@ class Fetcher
 	
 	@install_dir
 	
-	def initialize(output_dir,version="5.4.1",download_dir=Dir.tmpdir)
+	def initialize(output_dir,version="5.5.2",download_dir=Dir.tmpdir)
 		@output_dir = output_dir
 		filename = "solr-#{version}.tgz"
 		@version = version
